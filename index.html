@@ -1,1 +1,74 @@
-Pavan
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Box</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Body styling */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    }
+
+    /* Container for the welcome box */
+    .welcome-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 150px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    /* Welcome message styling */
+    .welcome-message {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    /* Animated appearance */
+    .show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Welcome box with message -->
+  <div class="welcome-box">
+    <p class="welcome-message">Welcome!</p>
+  </div>
+
+  <!-- JavaScript for the animation -->
+  <script>
+    // Wait until the content is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      // Select the welcome box
+      const welcomeBox = document.querySelector('.welcome-box');
+      // Add the 'show' class to trigger the animation
+      setTimeout(() => {
+        welcomeBox.classList.add('show');
+      }, 500); // delay to allow page load
+    });
+  </script>
+</body>
+</html>
